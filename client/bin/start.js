@@ -4,7 +4,7 @@ const path = require("path");
 const https = require("https");
 const { exec } = require("child_process");
 
-const packageJson = require("../package.json");
+const packageJson = require("../../package.json");
 
 const scripts = `"start": "webpack-dev-server --mode=development --open --hot",
 "build": "webpack --mode=production"`;
