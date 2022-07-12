@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { ChannelSearch, TeamChannelList, TeamChannelPreview } from 'stream-chat-react';
+import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 
 const SideBar = () => (
   <div className='channel-list__sidebar'>
@@ -15,10 +15,36 @@ const SideBar = () => (
   </div>
 )
 
+const Header = () => (
+  <div className='channel-list__header'>
+    <p className='channel-list__header__text'>SzyszMessage</p>
+  </div>
+)
+
 const ChannelListContainer = () => {
   return (
     <>
       <SideBar />
+      <div className='channel-list__list__wrapper'>
+        <Header />
+        <ChannelSearch />
+        <ChannelList
+          filters={{}}
+          channelRenderFilterFn={() => {}}
+          List={(listProps) => (
+            <TeamChannelList
+              {... listProps}
+              type="team"
+            />
+          )}
+          Preview={(previewProps) => (
+            <TeamChannelPreview
+              {...previewProps}
+              type="team"
+            />
+          )}
+        />
+      </div>
     </>
   )
 }

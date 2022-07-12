@@ -456,22 +456,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
+    height: 35px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     margin-bottom: 8px;
     border: 1px solid transparent;
-    width: 95%;
+    width: 90%;
 }
 
 .channel-search__input__wrapper:focus-within {
-    border: 1px solid #fff;
+    border: 1.5px solid #fff;
 }
 
 .channel-search__input__icon {
     width: 32px;
     display: flex;
     justify-content: center;
+    padding-left: 20px;
 }
 
 .channel-search__input__text {
@@ -481,6 +482,7 @@ body {
     font-family: Helvetica Neue, sans-serif;
     font-size: 16px;
     outline: none;
+    margin-left: 5px;
 }
 
 ::placeholder {
@@ -939,6 +941,8 @@ body {
 }
 
 .team-channel-list__message {
+    font-size: 90%;
+    font-family: Helvetica Neue, sans-serif;
     color: #ffffff;
     padding: 0 16px;
 }

@@ -4,7 +4,7 @@ import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 //require('dotenv').config();
 
-import { ChannelListContainer, ChannelContainer } from './components';
+import { ChannelListContainer, ChannelContainer, ChannelSearch } from './components';
 
 import './App.css';
 
