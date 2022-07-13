@@ -26,8 +26,8 @@ const TeamChannelPreview = ({ channel, type }) => {
     }
 
   return (
-      <div className={channel?.id === activeChannel?.id ? 'channel-preview__wrapper__selected' : 'channel-preview__wrapper'} onClick={() => {console.log(channel)}}>
-          {type === 'team' ? <ChannelPreview /> : <DirectPreview />}
+    <div className={channel?.id === activeChannel?.id ? 'channel-preview__wrapper__selected' : 'channel-preview__wrapper'} onClick={() => {console.log(channel)}}>
+        {type === 'team' ? <ChannelPreview /> : <DirectPreview />}
     </div>
   )
 }
