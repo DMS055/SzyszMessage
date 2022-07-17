@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
+const cookies = new Cookies();
+
 const initialState = {
     fullName: '',
     username: '',
@@ -19,15 +21,28 @@ const Auth = () => {
         setForm({ ... form, [e.target.name]: e.target.value });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
-        if (form.password !== form.confirmPassword) {
-            alert('Passwords do not match');
-            //return false;
-        }
+		const { fullName, username, password, phoneNumber, avatarURL } = form;
 
-        console.log(form);
+		const URL = 'http://localhost:5000/auth';
+
+		const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'signin'}`,
+			{ username, password, fullName, phoneNumber, avatarURL });
+
+		cookies.set('token', token);
+		cookies.set("username", username);
+		cookies.set('fullName', fullName);
+		cookies.set("userId", userId);
+
+		if (isSignup) {
+			cookies.set("phoneNumber", phoneNumber);
+			cookies.set("avatarURL", avatarURL);
+			cookies.set("hashedPassword", hashedPassword);
+		}
+
+		window.location.reload();
     }
     
     const switchMode = () => {
