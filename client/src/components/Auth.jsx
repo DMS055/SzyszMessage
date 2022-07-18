@@ -53,7 +53,7 @@ const Auth = () => {
 			<div className='auth__form-container'>
 				<div className='auth__form-container_fields'>
 					<div className='auth__form-container_fields-content'>
-						<p>{isSignup ? "Sign Up" : "Sign In"}</p>
+						<p>{isSignup ? "Sign Up" : "Login"}</p>
 						<form onSubmit={handleSubmit}>
 							{isSignup && (
 								<div className='auth__form-container_fields-content_input'>
@@ -124,7 +124,7 @@ const Auth = () => {
 								</div>
 							)}
 							<div className='auth__form-container_fields-content_button'>
-								<button>{isSignup ? " Sign In" : " Sign Up"}</button>
+								<button>{isSignup ? " Login" : " Sign Up"}</button>
 							</div>
 						</form>
 						<div className='auth__form-container_fields-account'>
@@ -133,7 +133,7 @@ const Auth = () => {
 									? "Have an account already?"
 									: "Don't have an account?"}
 								<span onClick={switchMode}>
-									{isSignup ? " Sign In" : " Sign Up"}
+									{isSignup ? " Login" : " Sign Up"}
 								</span>
 							</p>
 						</div>
