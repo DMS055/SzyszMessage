@@ -1,3 +1,5 @@
+## On hold until I figure out what the fuck should I replace `MessageTeam` with
+
 # SzyszMessage
 
 A chat app for odd people
