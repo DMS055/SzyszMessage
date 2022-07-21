@@ -4,6 +4,8 @@
 
 A chat app for odd people
 
+***Don't even ask about that name***
+
 Made with React and using Stream Chat API
 
 Inspired by JavaScript Mastery's video!
